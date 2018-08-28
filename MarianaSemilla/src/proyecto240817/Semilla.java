@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 import javax.print.attribute.standard.DateTimeAtProcessing;
-
+//nuevo
 public class Semilla {
 	public static void main(String[] args) throws IOException {	
 		ArrayList<Person> people = new ArrayList<>();
