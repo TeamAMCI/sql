@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ags-site-sinBasic&apos; to &apos;hgr-json-sinBasic&apos;" description="Rename resource &apos;ags-site-sinBasic&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/ags-site-sinBasic" name="hgr-json-sinBasic" stamp="1529958943101" updateReferences="true"/>
+</session>

@@ -1,0 +1,131 @@
+[admin@opshilab39 demo]$ su
+Password: 
+[root@opshilab39 demo]# yum install perl-DateTime
+Loaded plugins: langpacks, product-id, search-disabled-repos, subscription-manager
+This system is not registered with an entitlement server. You can use subscription-manager to register.
+Resolving Dependencies
+--> Running transaction check
+---> Package perl-DateTime.x86_64 2:1.04-6.el7 will be installed
+--> Processing Dependency: perl(Params::Validate) >= 0.76 for package: 2:perl-DateTime-1.04-6.el7.x86_64
+--> Processing Dependency: perl(DateTime::TimeZone) >= 1.09 for package: 2:perl-DateTime-1.04-6.el7.x86_64
+--> Processing Dependency: perl(DateTime::Locale) >= 0.41 for package: 2:perl-DateTime-1.04-6.el7.x86_64
+--> Processing Dependency: perl(Try::Tiny) for package: 2:perl-DateTime-1.04-6.el7.x86_64
+--> Running transaction check
+---> Package perl-DateTime-Locale.noarch 0:0.45-6.el7 will be installed
+--> Processing Dependency: perl(List::MoreUtils) for package: perl-DateTime-Locale-0.45-6.el7.noarch
+---> Package perl-DateTime-TimeZone.noarch 0:1.70-1.el7 will be installed
+--> Processing Dependency: perl(Class::Singleton) >= 1.03 for package: perl-DateTime-TimeZone-1.70-1.el7.noarch
+--> Processing Dependency: perl(Class::Load) for package: perl-DateTime-TimeZone-1.70-1.el7.noarch
+---> Package perl-Params-Validate.x86_64 0:1.08-4.el7 will be installed
+--> Processing Dependency: perl(Module::Implementation) for package: perl-Params-Validate-1.08-4.el7.x86_64
+---> Package perl-Try-Tiny.noarch 0:0.12-2.el7 will be installed
+--> Running transaction check
+---> Package perl-Class-Load.noarch 0:0.20-3.el7 will be installed
+--> Processing Dependency: perl(Package::Stash) >= 0.14 for package: perl-Class-Load-0.20-3.el7.noarch
+--> Processing Dependency: perl(Module::Runtime) >= 0.012 for package: perl-Class-Load-0.20-3.el7.noarch
+--> Processing Dependency: perl(Module::Runtime) for package: perl-Class-Load-0.20-3.el7.noarch
+--> Processing Dependency: perl(Data::OptList) for package: perl-Class-Load-0.20-3.el7.noarch
+---> Package perl-Class-Singleton.noarch 0:1.4-14.el7 will be installed
+---> Package perl-List-MoreUtils.x86_64 0:0.33-9.el7 will be installed
+---> Package perl-Module-Implementation.noarch 0:0.06-6.el7 will be installed
+--> Running transaction check
+---> Package perl-Data-OptList.noarch 0:0.107-9.el7 will be installed
+--> Processing Dependency: perl(Sub::Install) >= 0.921 for package: perl-Data-OptList-0.107-9.el7.noarch
+--> Processing Dependency: perl(Params::Util) for package: perl-Data-OptList-0.107-9.el7.noarch
+---> Package perl-Module-Runtime.noarch 0:0.013-4.el7 will be installed
+---> Package perl-Package-Stash.noarch 0:0.34-2.el7 will be installed
+--> Processing Dependency: perl(Package::Stash::XS) >= 0.26 for package: perl-Package-Stash-0.34-2.el7.noarch
+--> Processing Dependency: perl(Package::DeprecationManager) for package: perl-Package-Stash-0.34-2.el7.noarch
+--> Running transaction check
+---> Package perl-Package-DeprecationManager.noarch 0:0.13-7.el7 will be installed
+---> Package perl-Package-Stash-XS.x86_64 0:0.26-3.el7 will be installed
+---> Package perl-Params-Util.x86_64 0:1.07-6.el7 will be installed
+---> Package perl-Sub-Install.noarch 0:0.926-6.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=========================================================================================================
+ Package                               Arch         Version               Repository                Size
+=========================================================================================================
+Installing:
+ perl-DateTime                         x86_64       2:1.04-6.el7          rhel-7-server-rpms       112 k
+Installing for dependencies:
+ perl-Class-Load                       noarch       0.20-3.el7            rhel-7-server-rpms        27 k
+ perl-Class-Singleton                  noarch       1.4-14.el7            rhel-7-server-rpms        18 k
+ perl-Data-OptList                     noarch       0.107-9.el7           rhel-7-server-rpms        23 k
+ perl-DateTime-Locale                  noarch       0.45-6.el7            rhel-7-server-rpms       1.6 M
+ perl-DateTime-TimeZone                noarch       1.70-1.el7            rhel-7-server-rpms       409 k
+ perl-List-MoreUtils                   x86_64       0.33-9.el7            rhel-7-server-rpms        58 k
+ perl-Module-Implementation            noarch       0.06-6.el7            rhel-7-server-rpms        17 k
+ perl-Module-Runtime                   noarch       0.013-4.el7           rhel-7-server-rpms        19 k
+ perl-Package-DeprecationManager       noarch       0.13-7.el7            rhel-7-server-rpms        19 k
+ perl-Package-Stash                    noarch       0.34-2.el7            rhel-7-server-rpms        34 k
+ perl-Package-Stash-XS                 x86_64       0.26-3.el7            rhel-7-server-rpms        31 k
+ perl-Params-Util                      x86_64       1.07-6.el7            rhel-7-server-rpms        38 k
+ perl-Params-Validate                  x86_64       1.08-4.el7            rhel-7-server-rpms        69 k
+ perl-Sub-Install                      noarch       0.926-6.el7           rhel-7-server-rpms        21 k
+ perl-Try-Tiny                         noarch       0.12-2.el7            rhel-7-server-rpms        23 k
+
+Transaction Summary
+=========================================================================================================
+Install  1 Package (+15 Dependent packages)
+
+Total download size: 2.5 M
+Installed size: 14 M
+Is this ok [y/d/N]: y
+Downloading packages:
+---------------------------------------------------------------------------------------------------------
+Total                                                                     27 MB/s | 2.5 MB  00:00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : perl-Try-Tiny-0.12-2.el7.noarch                                                      1/16 
+  Installing : perl-Module-Runtime-0.013-4.el7.noarch                                               2/16 
+  Installing : perl-Module-Implementation-0.06-6.el7.noarch                                         3/16 
+  Installing : perl-Params-Validate-1.08-4.el7.x86_64                                               4/16 
+  Installing : perl-Params-Util-1.07-6.el7.x86_64                                                   5/16 
+  Installing : perl-List-MoreUtils-0.33-9.el7.x86_64                                                6/16 
+  Installing : perl-Sub-Install-0.926-6.el7.noarch                                                  7/16 
+  Installing : perl-Data-OptList-0.107-9.el7.noarch                                                 8/16 
+  Installing : perl-Package-DeprecationManager-0.13-7.el7.noarch                                    9/16 
+  Installing : perl-DateTime-Locale-0.45-6.el7.noarch                                              10/16 
+  Installing : perl-Class-Singleton-1.4-14.el7.noarch                                              11/16 
+  Installing : perl-Package-Stash-XS-0.26-3.el7.x86_64                                             12/16 
+  Installing : perl-Package-Stash-0.34-2.el7.noarch                                                13/16 
+  Installing : perl-Class-Load-0.20-3.el7.noarch                                                   14/16 
+  Installing : 2:perl-DateTime-1.04-6.el7.x86_64                                                   15/16 
+  Installing : perl-DateTime-TimeZone-1.70-1.el7.noarch                                            16/16 
+  Verifying  : perl-Sub-Install-0.926-6.el7.noarch                                                  1/16 
+  Verifying  : perl-Module-Implementation-0.06-6.el7.noarch                                         2/16 
+  Verifying  : perl-Class-Load-0.20-3.el7.noarch                                                    3/16 
+  Verifying  : perl-DateTime-Locale-0.45-6.el7.noarch                                               4/16 
+  Verifying  : perl-Package-Stash-0.34-2.el7.noarch                                                 5/16 
+  Verifying  : 2:perl-DateTime-1.04-6.el7.x86_64                                                    6/16 
+  Verifying  : perl-Try-Tiny-0.12-2.el7.noarch                                                      7/16 
+  Verifying  : perl-Data-OptList-0.107-9.el7.noarch                                                 8/16 
+  Verifying  : perl-DateTime-TimeZone-1.70-1.el7.noarch                                             9/16 
+  Verifying  : perl-Package-Stash-XS-0.26-3.el7.x86_64                                             10/16 
+  Verifying  : perl-List-MoreUtils-0.33-9.el7.x86_64                                               11/16 
+  Verifying  : perl-Params-Validate-1.08-4.el7.x86_64                                              12/16 
+  Verifying  : perl-Class-Singleton-1.4-14.el7.noarch                                              13/16 
+  Verifying  : perl-Params-Util-1.07-6.el7.x86_64                                                  14/16 
+  Verifying  : perl-Module-Runtime-0.013-4.el7.noarch                                              15/16 
+  Verifying  : perl-Package-DeprecationManager-0.13-7.el7.noarch                                   16/16 
+
+Installed:
+  perl-DateTime.x86_64 2:1.04-6.el7                                                                      
+
+Dependency Installed:
+  perl-Class-Load.noarch 0:0.20-3.el7                      perl-Class-Singleton.noarch 0:1.4-14.el7     
+  perl-Data-OptList.noarch 0:0.107-9.el7                   perl-DateTime-Locale.noarch 0:0.45-6.el7     
+  perl-DateTime-TimeZone.noarch 0:1.70-1.el7               perl-List-MoreUtils.x86_64 0:0.33-9.el7      
+  perl-Module-Implementation.noarch 0:0.06-6.el7           perl-Module-Runtime.noarch 0:0.013-4.el7     
+  perl-Package-DeprecationManager.noarch 0:0.13-7.el7      perl-Package-Stash.noarch 0:0.34-2.el7       
+  perl-Package-Stash-XS.x86_64 0:0.26-3.el7                perl-Params-Util.x86_64 0:1.07-6.el7         
+  perl-Params-Validate.x86_64 0:1.08-4.el7                 perl-Sub-Install.noarch 0:0.926-6.el7        
+  perl-Try-Tiny.noarch 0:0.12-2.el7                       
+
+Complete!
+

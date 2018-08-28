@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects/>
+ <used-by-projects/>
+ <paths>
+  <path value="/home/admin/.m2/repository/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.0_spec/1.0.0.Final-redhat-1/jboss-jaxrs-api_2.0_spec-1.0.0.Final-redhat-1.jar"/>
+  <path value="/home/admin/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar"/>
+  <path value="/home/admin/.m2/repository/javax/enterprise/cdi-api/1.2.0.redhat-2/cdi-api-1.2.0.redhat-2.jar"/>
+  <path value="/home/admin/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final-redhat-1/hibernate-jpa-2.1-api-1.0.0.Final-redhat-1.jar"/>
+  <path value="/home/admin/.m2/repository/javax/inject/javax.inject/1.0.0.redhat-6/javax.inject-1.0.0.redhat-6.jar"/>
+  <path value="/home/admin/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar"/>
+ </paths>
+ <validation>
+  <core validator-id="jsf-verification"/>
+  <core validator-id="jboss.cdi.core">
+   <linked-resource name="%1;" path="%0"/>
+   <linked-resource name="%1;" path="%2"/>
+   <linked-resource declaration="true" name="%3;" path="%2"/>
+   <linked-resource name="%6;" path="%4"/>
+   <linked-resource declaration="true" name="%5;" path="%4"/>
+   <linked-resource name="%6;" path="%7"/>
+  </core>
+  <el/>
+ </validation>
+ <aliases>
+  <alias
+   path="/enroll-json-sinBasic/src/main/java/gob/sat/enroll/controller/TestController.java" value="%1"/>
+  <alias path="ExamenGpoDaoJpa" value="%5"/>
+  <alias
+   path="/enroll-json-sinBasic/src/main/java/gob/sat/enroll/dao/AlumnoDao.java" value="%0"/>
+  <alias
+   path="/enroll-json-sinBasic/src/main/java/gob/sat/enroll/dao/ExamenGpoDao.java" value="%7"/>
+  <alias
+   path="/enroll-json-sinBasic/src/main/java/gob/sat/enroll/controller/TestControllerExamenGpo.java" value="%6"/>
+  <alias
+   path="/enroll-json-sinBasic/src/main/java/gob/sat/enroll/dao/ExamenGpoDaoJpaImpl.java" value="%4"/>
+  <alias path="AlumnoDaoJpa" value="%3"/>
+  <alias
+   path="/enroll-json-sinBasic/src/main/java/gob/sat/enroll/dao/AlumnoDaoJpaImpl.java" value="%2"/>
+ </aliases>
+ <includes/>
+ <uris/>
+</kb-project>
