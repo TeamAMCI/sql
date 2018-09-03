@@ -1,0 +1,223 @@
+
+
+Notas para crear proyecto en Gogs + Git
+
+En Consola Web crear nuevo proyecto [ gorh711e / enroll ]
+
+En consola Linux, moverse al proyecto [ /home/admin/workspace/enroll-json-sinBasic ]
+Ejecutar el comado [ git remote rm origin ]
+Con esto nos cambiamos de proyecto.
+
+A continuación ejecutar el comando:
+[ git remote add origin http://gogs-rhel7-cicd.eveopshi34.rhel74/gorh711e/enroll.git ]
+
+Posteriormente [  git commit -am"Commit Inicial" ]
+Y mostrará la pantalla esto:
+[master 1e11f70] Commit Inicial
+ Committer: admin <admin@opshilab39.rhel74>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 9 files changed, 24 insertions(+), 21 deletions(-)
+ rename src/main/java/gob/sat/{site => enroll}/application/BaseApplication.java (84%)
+ rename src/main/java/gob/sat/{site => enroll}/controller/TestController.java (86%)
+ rename src/main/java/gob/sat/{site => enroll}/controller/exception/AgsServicioException.java (84%)
+ rename src/main/java/gob/sat/{site => enroll}/dao/EmpleadoSiteDao.java (64%)
+ rename src/main/java/gob/sat/{site => enroll}/dao/EmpleadoSiteDaoJpaImpl.java (97%)
+ rename src/main/java/gob/sat/{site => enroll}/dao/exception/DaoException.java (90%)
+ rename src/main/java/gob/sat/{site => enroll}/modelo/SatAgsSiteActVw.java (95%)
+
+Finalmente ejecutar: [ git push -u origin master ]
+Introducir credenciales:  gorh711e / Fatguys7
+
+Counting objects: 231, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (97/97), done.
+Username for 'http://gogs-rhel7-cicd.eveopshi34.rhel74': gorh711e 
+Password for 'http://gorh711e@gogs-rhel7-cicd.eveopshi34.rhel74': 
+Writing objects: 100% (231/231), 2.54 MiB | 22.00 KiB/s, done.
+Total 231 (delta 60), reused 196 (delta 48)
+To http://gogs-rhel7-cicd.eveopshi34.rhel74/gorh711e/enroll.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+
+
+
+
+
+
+
+
+Vamos a compilar y armar el WAR / EAR para hacer el deploy del proyecto hacia JBoss EAP
+
+
+Desde línea de comando: [ mvn clean package ]
+Observaremos algo similar:
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< gob.sat.prueba:ws-rest-enroll >--------------------
+[INFO] Building ws-rest-enroll Maven Webapp 1.0-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ ws-rest-enroll ---
+[INFO] Deleting /home/admin/workspace/enroll-json-sinBasic/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ws-rest-enroll ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.2:compile (default-compile) @ ws-rest-enroll ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 7 source files to /home/admin/workspace/enroll-json-sinBasic/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ws-rest-enroll ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/admin/workspace/enroll-json-sinBasic/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.2:testCompile (default-testCompile) @ ws-rest-enroll ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ ws-rest-enroll ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-war-plugin:2.3:war (default-war) @ ws-rest-enroll ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [ws-rest-enroll] in [/home/admin/workspace/enroll-json-sinBasic/target/ws-enroll-dev]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/admin/workspace/enroll-json-sinBasic/src/main/webapp]
+[INFO] Webapp assembled in [70 msecs]
+[INFO] Building war: /home/admin/workspace/enroll-json-sinBasic/target/ws-enroll-dev.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.941 s
+[INFO] Finished at: 2018-06-26T17:18:44-05:00
+[INFO] ------------------------------------------------------------------------
+
+
+
+Ahora el comando [ mvn install ]
+Veremos en la consola esto:
+[admin@opshilab39 enroll-json-sinBasic]$ mvn install
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< gob.sat.prueba:ws-rest-enroll >--------------------
+[INFO] Building ws-rest-enroll Maven Webapp 1.0-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ ws-rest-enroll ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.2:compile (default-compile) @ ws-rest-enroll ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ ws-rest-enroll ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/admin/workspace/enroll-json-sinBasic/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.2:testCompile (default-testCompile) @ ws-rest-enroll ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.17:test (default-test) @ ws-rest-enroll ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-war-plugin:2.3:war (default-war) @ ws-rest-enroll ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [ws-rest-enroll] in [/home/admin/workspace/enroll-json-sinBasic/target/ws-enroll-dev]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/home/admin/workspace/enroll-json-sinBasic/src/main/webapp]
+[INFO] Webapp assembled in [71 msecs]
+[INFO] Building war: /home/admin/workspace/enroll-json-sinBasic/target/ws-enroll-dev.war
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ ws-rest-enroll ---
+[INFO] Installing /home/admin/workspace/enroll-json-sinBasic/target/ws-enroll-dev.war to /home/admin/.m2/repository/gob/sat/prueba/ws-rest-enroll/1.0-SNAPSHOT/ws-rest-enroll-1.0-SNAPSHOT.war
+[INFO] Installing /home/admin/workspace/enroll-json-sinBasic/pom.xml to /home/admin/.m2/repository/gob/sat/prueba/ws-rest-enroll/1.0-SNAPSHOT/ws-rest-enroll-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.871 s
+[INFO] Finished at: 2018-06-26T17:19:54-05:00
+[INFO] ------------------------------------------------------------------------
+
+
+ 
+Correr JBoss EAP
+cambiar a la ruta:
+/home/admin/jboss-eap-7.0/bin
+
+
+ejecutar 
+sh standalone.sh
+
+24 oct anestesia
+25 oct opera
+
+
+
+Instalar sqldeveloper:
+
+RPM for Linux Installation Notes
+
+ 
+
+SQL Developer supports JDK 7 and up.
+
+To install and run:
+- Ensure you have a JDK installed, if not, download here <http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html>
+
+---- [admin@opshilab39 ~]$ echo $JAVA_HOME=/usr/java/jdk1.8.0_171-amd64
+
+
+- Download SQL Developer
+- rpm -Uhv sqldeveloper-<build version number>-1.noarch.rpm
+
+- rpm -Uhv sqldeveloper-18.1.0.095.1630-1.noarch.rpm
+
+- cd sqldeveloper - sqldeveloper
+
+
+
+Instalar flash, mediante rpm
+desde su - root.
+
+
+- rpm -Uhv flash-player-npapi-30.0.0.154-release.x86_64.rpm
+
+
+
+Una vez que esté listo el código para hacerle deploy hacia JBoss EAP:
+
+
+git commit -am"Creacion de Servicio REST de Alumno"
+Desde la consola y en el folder, donde esté el proyecto Java....   [mvn clean package]
+
+
+Para publicar un war desde CLI.
+cambiarse al directorio de JBoss 
+
+   ./jboss-cli.sh -c controller=localhost:9990 --user=gorh711e --password=Fatguys7 --command="deploy /home/admin/workspace/enroll-json-sinBasic/target/ws-enroll-dev.war --force"
+
+  ./jboss-cli.sh -c controller=localhost:9990 --user=gorh711e --password=Fatguys7 --command="deploy /home/admin/TicketMonster/ticket-monster-2.7.0.Final-with-tutorials/demo/target/ticket-monster.war --force"
+
+  ./jboss-cli.sh -c controller=localhost:9990 --user=gorh711e --password=Fatguys7 --command="deploy /home/admin/jboss-eap-7.0/standalone/deployments/h2-console.war --force"
+
+
+
+
+
+Para despublicar / undeploy
+
+  ./jboss-cli.sh -c controller=localhost:9990 --user=gorh711e --password=Fatguys7 --command="undeploy ticket-monster.war --force"
+
+
